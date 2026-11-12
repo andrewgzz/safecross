@@ -25,8 +25,14 @@ Antes de comenzar, asegúrate de descargar e instalar las siguientes herramienta
    * Si usas *MariaDB nativo*, el servicio suele iniciar automáticamente con Windows.
 
    * Si usas *XAMPP*, abre el panel de control y haz clic en **Start** en el módulo **MySQL**.
+     
+2. **Ejecuta el Script:**
 
-2. **Conecta DBeaver:**
+   * En Windows, haz click en el buscador, escribe MySQL Client y ábrelo (MariaDB).
+
+   * Pega y ejecuta el código en squema.sql para crear la base de datos y sus tablas.
+
+3. **Conecta DBeaver:**
 
    * Abre DBeaver y crea una nueva conexión seleccionando **MariaDB** o **MySQL**.
 
@@ -34,11 +40,9 @@ Antes de comenzar, asegúrate de descargar e instalar las siguientes herramienta
 
    * **Username:** `root` | **Password:** *(deja en blanco si usas XAMPP por defecto, o ingresa la contraseña que configuraste al instalar MariaDB).*
 
-3. **Ejecuta el Script DDL:**
+   * **Database:** `safe_cross_db`
 
-   * En DBeaver, haz clic derecho sobre tu conexión $\rightarrow$ **SQL Editor** $\rightarrow$ **New SQL script**.
-
-   * Pega y ejecuta (seleccionando todo y presionando `Alt + X`) el código en squema.sql para crear la base de datos y sus tablas.
+   * Para confirmar que ingresaste los datos correctos, puedes usar el botón **Test Connection**.
 
 ## Fase 2: Configuración del Servidor Backend (Node.js)
 
@@ -56,12 +60,11 @@ Antes de comenzar, asegúrate de descargar e instalar las siguientes herramienta
 
      ```
      git clone https://github.com/andrewgzz/safecross.git
-     
      ```
 
 3. **Configura las credenciales de BD:**
 
-   * Abre el archivo `server.js` (o `.env` si aplica) y verifica que el `pool` de conexiones de MySQL apunte a tus credenciales locales (`root`, sin contraseña si es XAMPP, y base de datos `safe_cross_db`).
+   * Abre el archivo `server.js` que se ubica en la carpeta safecross_api (o `.env` si aplica) y verifica que el `pool` de conexiones de MySQL apunte a tus credenciales locales (`root`, sin contraseña si es XAMPP, o si usas MariaDB pon la contraseña que usaste al configurar la instalación, y base de datos `safe_cross_db`).
 
 4. **Inicia la API:**
 
